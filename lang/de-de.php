@@ -78,6 +78,31 @@ $website['explore'] = "Erkunden";
 $More['More'] = "Mehr";
 $Retrieve['Retrieve'] = "Verlorenen Account wiederherstellen";
 $Find['Find'] = "Finde uns auf der Karte!";
+
+//userplate
+$uplate['login'] = "<strong>Log in now</strong> to enhance and personalize your experience!";
+$uplate['profile'] = "Profile";
+$uplate['post'] = "View my posts";
+$uplate['auction'] = "View my auctions";
+$uplate['events'] = "View my events";
+$uplate['manage'] = "Manage your characters";
+$uplate['customize'] = "Personalize the characters that apear in this menu.";
+$uplate['r1'] = "Human";
+$uplate['r2'] = "Orc";
+$uplate['r3'] = "Dwarf";
+$uplate['r4'] = "Night Elf";
+$uplate['r5'] = "Undead";
+$uplate['r6'] = "Tauren";
+$uplate['r7'] = "Gnome";
+$uplate['r8'] = "Troll";
+$uplate['r9'] = "Goblin";
+$uplate['r10'] = "Blood elf";
+$uplate['r11'] = "Draenei";
+$uplate['r22'] = "Wargen";
+$uplate['r'] = "All Races";
+$uplate['nochars'] = "No characters have been found";
+//finish userplate
+
 // Starting the voting translation
 $Vote['Vote'] = "Vote System &amp; Simple";
 $Vote['Vote1'] = "Vote-System f&#252;r";

@@ -320,23 +320,14 @@ if(!isset($_SESSION['username'])){
 	//]]>
 	</script>
 	<?php }else{
-	echo '<div class="user-plate">
-	<div id="user-plate" class="card-character plate-0 ajax-update" style="background: url('.$website['root'].'wow/static/images/2d/card/0-0.jpg) 0 100% no-repeat;">
-	<div class="card-overlay"></div>
-	<span class="hover"></span>
-	</a>
-	<div class="meta">
-	<div class="player-name">';
-	echo $userInfo['firstName'].'
-	'.$userInfo['lastName'].'
-	</div>
-	<div class="character">
-	  <a class="character-name context-link" href="#" rel="np" data-tooltip="Change character">0 Characters</span></a>
-	  <div class="guild">
-	<a class="guild-name" href="#">';
-	echo $name_realm1['realm'];
-	echo '</a></div></div></div></div>
-		</div>';
-	
+	echo'
+  <div class="user-plate ajax-update">
+    <div class="card-nochars">
+	   <div class="player-name">
+	     '.$userInfo['firstName'].' '.$userInfo['lastName'].'
+	   </div>
+     '.$uplate['nochars'].'
+    </div>
+  </div>';	
 	} }
 	mysql_select_db($server_db,$connection_setup)or die(mysql_error());?>

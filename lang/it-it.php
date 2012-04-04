@@ -601,6 +601,7 @@ $uplate['r10'] = "Blood elf";
 $uplate['r11'] = "Draenei";
 $uplate['r22'] = "Wargen";
 $uplate['r'] = "All Races";
+$uplate['nochars'] = "No characters have been found";
 //finish userplate
 
 //Starting Armory
