@@ -44,14 +44,14 @@
 									$voteable = 0;
 									
 									if($timp['ore'] > 0)
-										if($timp['ore'] > 1) $in_time = 'in '.$timp['ore'].' hours';
-										else $in_time = 'in '.$timp['ore'].' hour';
+										if($timp['ore'] > 1) $in_time = ''.$timp['ore'].' hours';
+										else $in_time = ''.$timp['ore'].' hour';
 									else if($timp['min'] > 0)
 										if($timp['min'] > 1) $in_time = 'in '.$timp['min'].' minutes';
-										else $in_time = 'in '.$timp['min'].' minute';
+										else $in_time = ''.$timp['min'].' minute';
 									else if($timp['sec'] > 0)
 										if($timp['sec'] > 1) $in_time = 'in '.$timp['sec'].' seconds';
-										else $in_time = 'in '.$timp['sec'].' second';
+										else $in_time = ''.$timp['sec'].' second';
 									else $voteable = 1;
 								}
 								
