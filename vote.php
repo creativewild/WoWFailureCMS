@@ -255,8 +255,8 @@ _gaq.push(['_trackPageLoadTime']);
 										<h2 class="caption"><a target="_blank" href="'.$vote['Link'].'" onclick="window.location = \'vote.php?id='.$vote['ID'].'\'">'.$vote['Name'].'</a>'.$Vote['Vote28'].'</h2>
 										<p>'.$vote['Description'].'</p>';
 										echo '<br><br><br>';
-										if($voteable == 1) echo '<small>'.$Vote['Vote29'].'</small>';
-										else echo '<small>You can vote ' . $in_time . '</small>';
+										if($voteable == 1) echo '<small>'.$Vote['CanVoteNow'].'</small>';
+										else echo '<small>'.$Vote['CanVoteIn'].' '. $in_time . '</small>';
 										echo '
 									</div>
 								</div>
