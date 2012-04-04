@@ -226,14 +226,14 @@ _gaq.push(['_trackPageLoadTime']);
 										$voteable = 0;
 										
 										if($timp['ore'] > 0)
-											if($timp['ore'] > 1) $in_time = 'in '.$timp['ore'].''.$Vote['Vote24'].'';
-											else $in_time = 'in '.$timp['ore'].''.$Vote['Vote34'].'';
+											if($timp['ore'] > 1) $in_time = ''.$timp['ore'].''.$Vote['Vote24'].'';
+											else $in_time = ''.$timp['ore'].''.$Vote['Vote34'].'';
 										else if($timp['min'] > 0)
-											if($timp['min'] > 1) $in_time = 'in '.$timp['min'].''.$Vote['Vote25'].'';
-											else $in_time = 'in '.$timp['min'].''.$Vote['Vote35'].'';
+											if($timp['min'] > 1) $in_time = ''.$timp['min'].''.$Vote['Vote25'].'';
+											else $in_time = ''.$timp['min'].''.$Vote['Vote35'].'';
 										else if($timp['sec'] > 0)
-											if($timp['sec'] > 1) $in_time = 'in '.$timp['sec'].''.$Vote['Vote26'].'';
-											else $in_time = 'in '.$timp['sec'].''.$Vote['Vote27'].'';
+											if($timp['sec'] > 1) $in_time = ''.$timp['sec'].''.$Vote['Vote26'].'';
+											else $in_time = ''.$timp['sec'].''.$Vote['Vote27'].'';
 										else $voteable = 1;
 									}
 									
@@ -255,8 +255,8 @@ _gaq.push(['_trackPageLoadTime']);
 										<h2 class="caption"><a target="_blank" href="'.$vote['Link'].'" onclick="window.location = \'vote.php?id='.$vote['ID'].'\'">'.$vote['Name'].'</a>'.$Vote['Vote28'].'</h2>
 										<p>'.$vote['Description'].'</p>';
 										echo '<br><br><br>';
-										if($voteable == 1) echo '<small>'.$Vote['Vote29'].'</small>';
-										else echo '<small>You can vote ' . $in_time . '</small>';
+										if($voteable == 1) echo '<small>'.$Vote['CanVoteNow'].'</small>';
+										else echo '<small>'.$Vote['CanVoteIn'].' '. $in_time . '</small>';
 										echo '
 									</div>
 								</div>
