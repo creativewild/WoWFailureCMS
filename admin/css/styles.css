@@ -452,6 +452,9 @@ body {
 .carousel_ul li a.icom2 {
 	background: url(../images/icon-m2.png) no-repeat 0 0
 }
+.carousel_ul li a.icof {
+	background: url(../images/icon-f.png) no-repeat 0 0
+}
 .carousel_ul li a:hover {
 	background-position: 0 -64px
 }
@@ -1474,4 +1477,21 @@ body {
 }
 #checkall.clicked {
 	background-position:-217px -261px
+}
+
+.arrow-up{
+  margin-top: -8px;
+  margin-left: 15px;
+  width: 15px;
+  height: 17px;
+  position: absolute;
+  background:url(../images/up-down.png);
+}
+.arrow-down{
+  margin-top: -8px;
+  margin-left: 45px;
+  width: 15px;
+  height: 17px;
+  position: absolute;
+  background:url(../images/up-down.png) 15px;
 }
