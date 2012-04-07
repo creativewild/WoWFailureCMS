@@ -6,7 +6,7 @@
         <ul id="menu">
           <li><a href="dashboard.php">Dashboard</a></li>
           <li><a href="viewnews.php">News</a></li>
-          <li><a href="fcategory.php">Forum</a></li>
+          <li><a href="fcategory.php">Forums</a></li>
           <li><a href="#">Users</a></li>
           <li class="ddm"><a>Account</a>
             <ul class="ddl">
@@ -32,7 +32,7 @@
 				        <li><span rel="tooltip" title="<strong style='color:#00B6FF'>View/Edit News</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico3" href='viewnews.php'></a></span></li>
 			         	<li><span rel="tooltip" title="<strong style='color:#00B6FF'>Manage Media</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico10" href='mediaall.php'></a></span></li>
 				        <li><span rel="tooltip" title="<strong style='color:#00B6FF'>Unapproved Media</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="icom2" href='mediaun.php'></a></span></li>
-				        <li><span rel="tooltip" title="<strong style='color:#00B6FF'>Forum</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="icof" href='fcategory.php'></a></span></li>                   
+				        <li><span rel="tooltip" title="<strong style='color:#00B6FF'>Forums</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="icof" href='fcategory.php'></a></span></li>                   
 						    
                 <li><span rel="tooltip" title="<strong style='color:#00B6FF'>View the Website</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico4" href='viewwebsite.php'></a></span></li>
 						    <li><span rel="tooltip" title="<strong style='color:#00B6FF'>Connectivity</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico2" href='#'></a></span></li>
