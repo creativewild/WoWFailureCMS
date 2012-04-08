@@ -20,6 +20,10 @@ if(isset($_POST['change_name'])){
     }
   }
 }
+elseif(isset($_POST['lock_id'])){
+  mysql_select_db($server_db);
+  $lock = mysql_query("UPDATE forum_forums SET locked = ((locked + 1) % 2) WHERE id = '".intval($_POST['lock_id'])."'")or die(mysql_error());  
+}
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -98,6 +102,7 @@ $('#checkall').toggleClass('clicked');
           </form>
         </h2>
       </div>
+      <div id="moveTable">
       <table>
         <thead>
         <tr>  
@@ -109,7 +114,7 @@ $('#checkall').toggleClass('clicked');
           <th class="inc"><strong>Up / Down</strong></th>
         </tr>
         </thead>
-        <tbody id="moveTable">
+        <tbody>
       <?php
       mysql_select_db($server_db);
       $sql_forum = mysql_query("SELECT * FROM forum_forums WHERE categ = '".intval($_GET['id'])."' ORDER BY num ASC");
@@ -138,18 +143,19 @@ $('#checkall').toggleClass('clicked');
       echo'</td>
           <td class="inc">
             <form method="post" action="">
+              <input type="hidden" name="lock_id" value="'.$row['id'].'" />
               <input type="image" name="lock" src="images/'.$lock_ico.'" alt="Lock" />
             </form>
           </td> 
           <td class="inc">';
-          if($i > 1) echo'<a href="javascript:;" onclick="move(&apos;'.$row['id'].'&apos;,&apos;up&apos;,&apos;forum&apos;);"><div class="arrow-up"></div></a>';
-          if($i < mysql_num_rows($sql_forum)) echo '<a href="javascript:;" onclick="move(&apos;'.$row['id'].'&apos;,&apos;down&apos;,&apos;forum&apos;);"><div class="arrow-down"></div></a>';
+          if($i > 1) echo'<a href="javascript:;" onclick=move("'.$row['id'].'","up","forum");><div class="arrow-up"></div></a>';
+          if($i < mysql_num_rows($sql_forum)) echo '<a href="javascript:;" onclick=move("'.$row['id'].'","down","forum");><div class="arrow-down"></div></a>';
           '</td>       
         </tr>';  
       }       
       ?>
         </tbody>
-      </table>
+      </table></div>
     </div>
     <img src="images/sepLine.png" alt="" class="sepline" />
               <div id="calen">

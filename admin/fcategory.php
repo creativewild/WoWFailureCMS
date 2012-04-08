@@ -77,7 +77,7 @@ $('#checkall').toggleClass('clicked');
 			<div class="datalist">
 	     <div class="heading">
         <h2>Forum Categorys</h2>
-      </div>
+      </div><div id="moveTable">
       <table>
         <thead>
         <tr>   
@@ -88,14 +88,14 @@ $('#checkall').toggleClass('clicked');
           <th class="inc"><strong>Up / Down</strong></th>
         </tr>
         </thead>
-        <tbody id="moveTable">
+        <tbody>
       <?php
       mysql_select_db($server_db) or die (mysql_error());
       $sql_categ = mysql_query("SELECT * FROM forum_categ ORDER BY num");
       $i = 0;
       while ($row = mysql_fetch_assoc($sql_categ)){
       $i++;
-      $forums = mysql_query("SELECT * FROM forum_forums WHERE categ = '".$row['id']."'");
+      $forums = mysql_query("SELECT * FROM forum_forums WHERE categ = '".$row['id']."' ORDER BY num ASC");
       echo'
         <tr>  
           <td class="edit">
@@ -116,15 +116,15 @@ $('#checkall').toggleClass('clicked');
       echo'</td>
           <td class="inc">'.mysql_num_rows($forums).'</td>
           <td class="inc">';
-          if($i > 1) echo'<a href="javascript:;" onclick="move(&apos;'.$row['id'].'&apos;,&apos;up&apos;,&apos;categ&apos;);"><div class="arrow-up"></div></a>';
-          if($i < mysql_num_rows($sql_categ)) echo '<a href="javascript:;" onclick="move(&apos;'.$row['id'].'&apos;,&apos;down&apos;,&apos;categ&apos;);"><div class="arrow-down"></div></a>';
+          if($i > 1) echo'<a href="javascript:;" onclick=move("'.$row['id'].'","up","categ");><div class="arrow-up"></div></a>';
+          if($i < mysql_num_rows($sql_categ)) echo '<a href="javascript:;" onclick="move(&#39;'.$row['id'].'&#39;,&#39;down&#39;,&#39;categ&#39;);"><div class="arrow-down"></div></a>';
           '</td>       
         </tr>'; 
       }       
         
-      ?>
+      ?> 
         </tbody>
-      </table>
+      </table></div>
     </div>
     <img src="images/sepLine.png" alt="" class="sepline" />
               <div id="calen">

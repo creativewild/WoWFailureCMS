@@ -58,7 +58,7 @@ include("../configs.php");
       $change_new = mysql_query("UPDATE news SET title = '".$title."' , author = '".$author."' , image = '".$image."', content = '".$content."', date = '".$date."' WHERE id = '".$_POST['id']."'");
       if ($change_new == true){
         echo '<div class="alert-page" align="center"> The article has been updated successfully!</div>';
-        echo '<meta http-equiv="refresh" content="3;url=dashboard.php"/>';
+        echo '<meta http-equiv="refresh" content="3;url=viewnews.php"/>';
       }
       else{
         echo '<div class="errors" align="center"><font color="red"> An ERROR has occured while saving the article!</font></div>';
@@ -125,10 +125,16 @@ function pop(action){
   if (action=='open')
   {
     vis.display = 'block';               //show/hidde the image select pop-up
+    frm_element.focus();
+  }
+  else if(action == 'blur'){
+    if(document.activeElement.name != 'pop'){
+      vis.display = 'none';
+    }
   }
   else
   {
-    vis.display = 'none';
+      vis.display = 'none';
   }
 }
 function changeVal(val){
@@ -179,7 +185,7 @@ function preview(img,event){
             <input id="image" name="image" type="text" value="<?php echo $new['image']; ?>" class="reg" onfocus="pop('open');" /> 
             </p>
             <img src="<?php echo '../news/'.$new['image'].'.jpg'; ?>" id="imgLoad" />
-            <div  class="pop-image" id="pop">
+            <div  class="pop-image" id="pop" name="pop" onblur="pop('blur');" tabindex="1">
               <div class="note">
                 <table border=0>
                 <?php       
@@ -189,7 +195,7 @@ function preview(img,event){
                   $pathimagen=$path.$imagen;
                   $nombre = substr($imagen,0,strlen($imagen)-11); //get the name for the db
                   echo "<tr>"; // para empezar una nueva linea
-                  echo "<td><a href='javascript:;' onclick=changeVal('".$nombre."');pop('close');>
+                  echo "<td><a href='javascript:;' name='pop' onclick=changeVal('".$nombre."');pop('close');>
                   <img src='$pathimagen' width='160px' border=0 onmouseover=preview('".$pathimagen."','on'); onmouseout=preview('".$pathiamgen."','out');></a></td>";  //Clik on it and the name appear on the textbox
                   echo "</tr>";
                 }
@@ -212,7 +218,7 @@ function preview(img,event){
             <textarea id="input" name="content"><?php echo $new['content']; ?></textarea>
           </div>
           <input name="save" type="submit" value="Save Changes" />
-          <a href="dashboard.php"><input name="reset" type="reset" value="Cancel" /></a>
+          <a href="viewnews.php"><input name="reset" type="reset" value="Cancel" /></a>
         </form>
       </div>
     </div>

@@ -17,7 +17,7 @@ include("../configs.php");
     $delete_com = mysql_query("DELETE FROM comments WHERE newsid = '".$_POST['id']."'");
     if ($delete_new == true && $delete_com == true){
       echo '<div class="alert-page" align="center"> The article has been deleted successfully!</div>';
-      echo '<meta http-equiv="refresh" content="3;url=dashboard.php"/>';
+      echo '<meta http-equiv="refresh" content="3;url=viewnews.php"/>';
     }
     else{
       echo '<div class="errors" align="center"><font color="red"> An ERROR has occured while deleting the article!</font></div>';
@@ -98,6 +98,7 @@ DD_roundies.addRule('#tabsPanel', '5px 5px 5px 5px', true);
           if (isset($_GET['id'])){
             mysql_select_db($server_db);
             $new = mysql_fetch_assoc(mysql_query("SELECT id,title,author,date,comments,content FROM news WHERE id = '".$_GET['id']."'"));
+            $author = mysql_fetch_assoc(mysql_query("SELECT * FROM users WHERE id = '".$new['author']."'"));
             if (!$new['id']){
               $error = true;
             }
@@ -115,11 +116,11 @@ DD_roundies.addRule('#tabsPanel', '5px 5px 5px 5px', true);
               <p align="center"><strong>Are you sure you want to delete this article?</strong></p>
               <input type="hidden" name="id" value="'.$new['id'].'" />
               <p align="center"><button type="submit" name="delete" onclick="Form.submit(this)"><span>Delete</span></button>
-              <a href="dashboard.php"><button name="reset" type="reset" value="Cancel"><span>Cancel</span></button></a></p>
+              <a href="viewnews.php"><button name="reset" type="reset" value="Cancel"><span>Cancel</span></button></a></p>
               <p align="center">(You will lose all the comments too)</p> 
             </td>
           </tr>
-          <tr><td><p><strong>Author: </strong>'.$new['author'].'</p></td></tr>
+          <tr><td><p><strong>Author: </strong>'.$author['firstName'].' '.$author['lastName'].' ('.$new['author'].')</p></td></tr>
           <tr><td><p><strong>Date: </strong>'.$new['date'].'</p></td></tr>
           <tr><td><p><strong>Replies: </strong>'.$new['comments'].'</p></td></tr> 
           <tr><td colspan="2"><h3>Content:</h3><p>'.$new['content'].'</p></td></tr>

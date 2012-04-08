@@ -16,15 +16,15 @@ function Ajax(){
 }
 function move(id, mov, type){
 
- tbody = document.getElementById('moveTable');
+ var tbody = document.getElementById('moveTable');
 
  ajax=Ajax();
 
  ajax.open("GET", "forder.php?id="+id+"&move="+mov+"&t="+type);
  ajax.onreadystatechange=function() {
-  if (ajax.readyState==4) {
-   tbody.innerHTML = ajax.responseText
+  if (ajax.readyState==4) { 
+   tbody.innerHTML = ajax.responseText;
   }
  }
- ajax.send(null)
+ ajax.send(null);
 }

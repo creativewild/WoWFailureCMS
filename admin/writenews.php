@@ -107,10 +107,16 @@ function pop(action){
   if (action=='open')
   {
     vis.display = 'block';               //show/hidde the image select pop-up
+    frm_element.focus();
+  }
+  else if(action == 'blur'){
+    if(document.activeElement.name != 'pop'){
+      vis.display = 'none';
+    }
   }
   else
   {
-    vis.display = 'none';
+      vis.display = 'none';
   }
 }
 function changeVal(val){
@@ -154,14 +160,14 @@ function preview(img,event){
         <h3>Head</h3>
         <form method="post" action="" class="styleForm">
           <p>Title<br />
-            <input name="title" type="text" value="Enter Title" class="reg" onfocus="if(this.value=='Enter Title')this.value=''" onblur="if(this.value=='')this.value='Enter Title'" />
+            <input name="title" id="title" type="text" value="Enter Title" class="reg" onfocus="if(this.value=='Enter Title')this.value=''" onblur="if(this.value=='')this.value='Enter Title'" />
           </p> 
           <div class="folder">
             <p>Image<br />
             <input id="image" name="image" type="text" value="" class="reg" onfocus="pop('open');" />
             </p>
             <img src="" id="imgLoad" style="display:none;"/>
-            <div  class="pop-image" id="pop">
+            <div  class="pop-image" id="pop" name="pop" onblur="pop('blur');" tabindex="1">
               <div class="note">
                 <table border=0>
                 <?php
@@ -171,7 +177,7 @@ function preview(img,event){
                   $pathimagen=$path.$imagen;
                   $nombre = substr($imagen,0,strlen($imagen)-11); //get the name for the db
                   echo "<tr>"; // para empezar una nueva linea
-                  echo "<td><a href='javascript:;' onclick=changeVal('".$nombre."');pop('close');>
+                  echo "<td><a href='javascript:;' name='pop' onclick=changeVal('".$nombre."');pop('close');>
                   <img src='$pathimagen' width='160px' border=0 onmouseover=preview('".$pathimagen."','on'); onmouseout=preview('".$pathiamgen."','out');></a></td>";  //Clik on it and the name appear on the textbox
                   echo "</tr>";
                 }

@@ -1,5 +1,6 @@
 <?php
   include("../configs.php");
+  ini_set("default_charset", "iso-8859-1" );
   $id = intval($_GET['id']);
   $move = $_GET['move'];
   $type = $_GET['t'];
@@ -19,7 +20,18 @@ if($type == 'categ'){   //Updates and change innerHtml for change order in forum
   
 
 $sql_categ = mysql_query("SELECT * FROM forum_categ ORDER BY num");
-$i = 0;      
+$i = 0;   
+echo '<table>
+        <thead>
+        <tr>   
+          <th class="edit"><strong>Manage</strong></th>   
+          <th class="title"><strong>Name</strong></th>
+          <th class="desc"><strong>Forums</strong></th>
+          <th class="inc"><strong>Nº Forums</strong></th>
+          <th class="inc"><strong>Up / Down</strong></th>
+        </tr>
+        </thead>
+        <tbody>'; 
 while ($row = mysql_fetch_assoc($sql_categ)){
 $i++;
   $forums = mysql_query("SELECT * FROM forum_forums WHERE categ = '".$row['id']."'");
@@ -43,11 +55,12 @@ $i++;
       echo'</td>
           <td class="inc">'.mysql_num_rows($forums).'</td>
           <td class="inc">';
-          if($i > 1) echo'<a href="javascript:;" onclick="move(&apos;'.$row['id'].'&apos;,&apos;up&apos;,&apos;categ&apos;);"><div class="arrow-up"></div></a>';
-          if($i < mysql_num_rows($sql_categ)) echo '<a href="javascript:;" onclick="move(&apos;'.$row['id'].'&apos;,&apos;down&apos;,&apos;categ&apos;);"><div class="arrow-down"></div></a>';
+          if($i > 1) echo'<a href="javascript:;" onclick=move("'.$row['id'].'","up","categ");><div class="arrow-up"></div></a>';
+          if($i < mysql_num_rows($sql_categ)) echo '<a href="javascript:;" onclick=move("'.$row['id'].'","down","categ");><div class="arrow-down"></div></a>';
           '</td>       
         </tr>'; 
   }
+  echo '</tbody></table>';
 }
 elseif($type == 'forum'){   //Updates and change innerHtml for change order in forums
   mysql_select_db($server_db);
@@ -64,6 +77,18 @@ elseif($type == 'forum'){   //Updates and change innerHtml for change order in f
 
   $sql_forum = mysql_query("SELECT * FROM forum_forums WHERE categ = '".$info['categ']."' ORDER BY num ASC");
   $i = 0;
+  echo '<table>
+        <thead>
+        <tr>  
+          <th class="edit"><strong>Edit</strong></th>
+          <th></th>   
+          <th class="title"><strong>Name</strong></th>
+          <th class="desc"><strong>Description</strong></th>
+          <th class="inc"><strong>Lock/Unlock</strong></th>
+          <th class="inc"><strong>Up / Down</strong></th>
+        </tr>
+        </thead>
+        <tbody>';
   while ($row = mysql_fetch_assoc($sql_forum)){
   $i++;
       echo'
@@ -88,14 +113,16 @@ elseif($type == 'forum'){   //Updates and change innerHtml for change order in f
       echo'</td>
           <td class="inc">
             <form method="post" action="">
+              <input type="hidden" name="lock_id" value="'.$row['id'].'" />
               <input type="image" name="lock" src="images/'.$lock_ico.'" alt="Lock" />
             </form>
           </td> 
           <td class="inc">';
-          if($i > 1) echo'<a href="javascript:;" onclick="move(&apos;'.$row['id'].'&apos;,&apos;up&apos;,&apos;forum&apos;);"><div class="arrow-up"></div></a>';
-          if($i < mysql_num_rows($sql_forum)) echo '<a href="javascript:;" onclick="move(&apos;'.$row['id'].'&apos;,&apos;down&apos;,&apos;forum&apos;);"><div class="arrow-down"></div></a>';
+          if($i > 1) echo'<a href="javascript:;" onclick=move("'.$row['id'].'","up","forum");><div class="arrow-up"></div></a>';
+          if($i < mysql_num_rows($sql_forum)) echo '<a href="javascript:;" onclick=move("'.$row['id'].'","down","forum");><div class="arrow-down"></div></a>';
           '</td>       
         </tr>'; 
   }
+  echo '</tbody></table>';
 }                   
 ?>

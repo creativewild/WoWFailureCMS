@@ -651,6 +651,9 @@ body {
 }
 
 /*TABLE FOR CONTENT*/
+.table-content td{
+  vertical-align:middle;
+}
 #content .datalist table {
   background:#E8E8E8; 
   border-collapse: collapse;
@@ -1015,7 +1018,11 @@ body {
 	font-size:11px;
 	color:#8a8a8a;
 	border:0;
-	background:url(../images/form-textareaBg.png) no-repeat
+	background:url(../images/form-textareaBg.png) no-repeat;
+	border-radius:12px;
+	-moz-border-radius:12px;
+	-webkit-border-radius:12px;
+	resize: none;
 }
 #content .forms .styleForm h3 {
 	margin-left:0;
