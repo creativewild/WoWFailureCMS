@@ -101,6 +101,7 @@ $('#checkall').toggleClass('clicked');
             <button type="submit" name="change_name" value="Submit Name">Submit Name</button>
           </form>
         </h2>
+        <div style="float:right;margin: 30px 20px 0 0px;"><a href="fnew.php?id=<?php echo intval($_GET['id']); ?>"><button type="submit" name="f_new" value="New Forum">New Forum</button></a></div>
       </div>
       <div id="moveTable">
       <table>

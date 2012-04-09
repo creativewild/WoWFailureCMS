@@ -9,7 +9,23 @@ include("../configs.php");
 <meta http-equiv="refresh" content="2;url=GTFO.php"/>
 		');
 	} 
-  
+
+if(isset($_POST['s_new'])){
+  mysql_select_db($server_db);
+  $info = mysql_fetch_assoc(mysql_query("SELECT num FROM forum_categ ORDER BY num DESC LIMIT 0,1"));
+  $categ = mysql_query("INSERT INTO forum_categ (num,name) VALUES ('".($info['num'] + 1)."','".$_POST['new_categ']."')");
+  if(!$categ) echo '<div align="center"><font color="red">An error has ocurred, the category could not have been created!</font></div>';
+}
+elseif(isset($_POST['id_del'])){
+  mysql_select_db($server_db);
+  $forums = mysql_query("SELECT * FROM forum_forums WHERE categ = '".intval($_POST['id_del'])."'");
+  if(mysql_num_rows($forums) > 0) echo '<div align="center"><font color="red">In order to the delete a category it must be empty. You can delete or move the forums on the forum edit panel.</font></div>';  
+  else{
+    $del = mysql_query("DELETE FROM forum_categ WHERE id = '".intval($_POST['id_del'])."'");
+    if($del) echo '<div align="center"><font color="green">The forum category have been deleted!</font></div>';
+    else echo '<div align="center"><font color="red">An error has ocurred, the category could not have been deleted!</font></div>';
+  }
+}  
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -77,11 +93,16 @@ $('#checkall').toggleClass('clicked');
 			<div class="datalist">
 	     <div class="heading">
         <h2>Forum Categorys</h2>
+        <form method="post" action="" class="pagination">
+          <input type="text" class="pag" name="new_categ" value="New Category" style="margin: 20px 0 0 29px;width:auto;height:auto;background-color:#FFF;font-size:18px;" onfocus="if(this.value=='New Category'){this.value=''}" onblur="if(this.value==''){this.value='New Category'}"/>
+          <button type="submit" name="s_new" value="Add">Add Category</button>
+        </form>
       </div><div id="moveTable">
       <table>
         <thead>
         <tr>   
-          <th class="edit"><strong>Manage</strong></th>   
+          <th class="edit"><strong>Manage</strong></th> 
+          <th class="edit"><strong>Delete</strong></th>   
           <th class="title"><strong>Name</strong></th>
           <th class="desc"><strong>Forums</strong></th>
           <th class="inc"><strong>Nº Forums</strong></th>
@@ -100,6 +121,12 @@ $('#checkall').toggleClass('clicked');
         <tr>  
           <td class="edit">
             <a href="forums.php?id='.$row['id'].'"><img src="images/editIco.png" alt="" /></a>
+          </td>
+          <td class="inc">
+            <form method="post" action="">
+              <input type="hidden" name="id_del" value="'.$row['id'].'" />
+              <input type="image" name="s_del" src="images/deletIco.png" alt="Del" />
+            </form>
           </td>
           <td class="title">'.$row['name'].'</td>
           <td class="desc">';

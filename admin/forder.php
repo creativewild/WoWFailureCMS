@@ -24,7 +24,8 @@ $i = 0;
 echo '<table>
         <thead>
         <tr>   
-          <th class="edit"><strong>Manage</strong></th>   
+          <th class="edit"><strong>Manage</strong></th>
+          <th class="edit"><strong>Delete</strong></th>    
           <th class="title"><strong>Name</strong></th>
           <th class="desc"><strong>Forums</strong></th>
           <th class="inc"><strong>Nº Forums</strong></th>
@@ -39,6 +40,12 @@ $i++;
     <tr> 
       <td class="edit">
         <a href="forums.php?id='.$row['id'].'"><img src="images/editIco.png" alt="" /></a>
+      </td>
+      <td class="inc">
+        <form method="post" action="">
+          <input type="hidde" name="id_del" value="'.$row['id'].'" />
+          <input type="image" name="s_del" src="images/deletIco.png" alt="Del" />
+        </form>
       </td>
       <td class="title">'.$row['name'].'</td>
       <td class="desc">';
