@@ -91,6 +91,7 @@ elseif($type == 'forum'){   //Updates and change innerHtml for change order in f
           <th></th>   
           <th class="title"><strong>Name</strong></th>
           <th class="desc"><strong>Description</strong></th>
+          <th class="inc"><strong>Topics</strong></th>
           <th class="inc"><strong>Lock/Unlock</strong></th>
           <th class="inc"><strong>Up / Down</strong></th>
         </tr>
@@ -118,6 +119,9 @@ elseif($type == 'forum'){   //Updates and change innerHtml for change order in f
                 echo'<span rel="tooltip" title="<strong>'.$row['description'].'</strong>">'.substr(strip_tags($row['description']),0,60).'...</span>';}
               else{ echo $row['description'];}
       echo'</td>
+          <td>';
+          $number_t = mysql_fetch_assoc(mysql_query("SELECT COUNT(id) as count FROM forum_threads WHERE forumid = '".$row['id']."'"));
+      echo $number_t['count'].'</td>
           <td class="inc">
             <form method="post" action="">
               <input type="hidden" name="lock_id" value="'.$row['id'].'" />

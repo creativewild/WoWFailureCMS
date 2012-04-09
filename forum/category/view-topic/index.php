@@ -1,5 +1,10 @@
 <?php require_once("../../../configs.php"); 
 $page_cat = "forums";
+
+if(isset($_POST['s_move'])){
+  mysql_select_db($server_db);
+  $move = mysql_query("UPDATE forum_threads SET forumid = '".intval($_POST['t_move'])."' WHERE id = '".intval($_GET['t'])."'");
+}
 ?>
 <head>
 <title><?php echo $website['title']; ?></title>
@@ -197,6 +202,20 @@ if($error == 1){
                 if ($thread['locked'] == 0) echo '<a class="ui-button button1" href="../edit-post/lock.php?p='.$postid['id'].'"><span><span>Close Topic</span></span></a>';
                 else echo '<a class="ui-button button1" href="../edit-post/lock.php?p='.$postid['id'].'"><span><span>Open Topic</span></span></a>';
                 echo '<a class="ui-button button1" href="../edit-post/delete.php?p='.$postid['id'].'"><span><span>Delete Topic</span></span></a>';
+                $categ = mysql_query("SELECT * FROM forum_categ ORDER BY num ASC");
+                echo '<div style="float:right;">
+                <form method="post" action="">
+                <select name="t_move"><option value="">Move to...</option>';
+                while ($group = mysql_fetch_assoc($categ)){
+                  echo '<optgroup label="'.$group['name'].'">';
+                  $forums = mysql_query("SELECT * FROM forum_forums WHERE categ = '".$group['id']."' ORDER BY num ASC");
+                  while ($op = mysql_fetch_assoc($forums)){
+                    echo '<option value="'.$op['id'].'">'.$op['name'].'</option>';
+                  }
+                  echo '</optgroup>';
+                }
+                echo '</select><button type="submit" name="s_move" class="ui-button button1" style="float:right;"><span><span>MOVE</span></span></button>
+                </form></div>';
              } 
           }
           elseif($thread['locked'] == 0){
