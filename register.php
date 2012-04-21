@@ -817,33 +817,7 @@ passwordStrength3: 'Strong'
 </span>
 </div>
 <div  class="input-row input-row-text">
-<div  class="notereg">
-<script type="text/javascript">  
-function pop(action){
-  var frm_element = document.getElementById('newPassword-note11');
-  var vis = frm_element.style;
-  if (action=='open')
-  {
-    vis.display = 'block';
-  }
-  else
-  {
-    vis.display = 'none';
-  }
-}
-</script>
-<div class="ui-note" style="top:7px;left:-5px;">
-<div class="form-note toggle-note border-5 glow-shadow" id="newPassword-note11">
-<div class="note">
-<h5><?php echo $Reg['Reg21']; ?></h5><ul><li><?php echo $Reg['Reg22']; ?><strong><?php echo $Reg['Reg23']; ?></strong></li><li><?php echo $Reg['Reg24']; ?><strong><?php echo $Reg['Reg25']; ?></strong><?php echo $Reg['Reg26']; ?><strong><?php echo $Reg['Reg27']; ?></strong><?php echo $Reg['Reg28']; ?></li><li><?php echo $Reg['Reg29']; ?></li><li><?php echo $Reg['Reg30']; ?><strong><?php echo $Reg['Reg31']; ?></strong><?php echo $Reg['Reg32']; ?></li><li><?php echo $Reg['Reg33']; ?></li></ul>
-<a href="javascript:;" class="close-note" rel="newPassword-note" onclick="pop('close');"></a>
-</div>
-<div class="note-arrow"></div> 
-</div>
-<a href="javascript:;" class="note-toggler" rel="newPassword-note" onclick="pop('open');">
-<img src="wow/static/images/icons/tooltip-help.gif" alt="?" width="16" height="16" />
-</a>
-</div></div>
+
 <span class="input-left">
 <label for="password">
 <span class="label-text">

@@ -65,7 +65,7 @@
 <span></span>
 </li>
 
-<li class="account-balance" id="accountBalanceCenter" data-tooltip-options="{&quot;location&quot;: &quot;mouse&quot;}">
+<!--<li class="account-balance" id="accountBalanceCenter" data-tooltip-options="{&quot;location&quot;: &quot;mouse&quot;}">
 <a href="#" class="border-3 menu-arrow title" onclick="openAccountDropdown(this, 'accountBalance'); return false;">
 <span class="sub-title">Balance:</span><br />
 <span class="balance" id="primary-balance">0 &#8364;</span>
@@ -78,7 +78,7 @@
 <li class="nonBeta"><a href="#">Balance Help</a></li>
 </ul>
 </div>
-</li>
+</li>-->
 </ul>
 <span class="clear"><!-- --></span>
 </div>
