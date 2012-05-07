@@ -210,7 +210,6 @@ Flash.ratingImage = 'http://eu.media.blizzard.com/wow/player/rating-pegi.jpg';
 								</ul>
 							</div>
 						</div>
-											
 											<div class="coc"> <?php echo $click['click']; ?> <a href="http://battle.net/community/conduct"><?php echo $here['here']; ?></a><?php echo $Forum['Forum33']; ?></div>
 									</div>
 									<span class="clear"><!-- --></span>
@@ -221,7 +220,6 @@ Flash.ratingImage = 'http://eu.media.blizzard.com/wow/player/rating-pegi.jpg';
 				</div>
 			</div>
 		</div>
-	</div>
-<?php include("../footer.php"); ?>
+	<?php include("../footer.php"); ?>
 </body>
 </html>
