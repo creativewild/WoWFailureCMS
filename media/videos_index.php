@@ -108,7 +108,7 @@ _gaq.push(['_trackPageview']);
 							<?php } ?>
 
 							<span class="page-counter">
-							Página <span id='start-page'><?php echo $pagActual; ?></span> de <?php echo $pagTotal; ?>
+							Pï¿½gina <span id='start-page'><?php echo $pagActual; ?></span> de <?php echo $pagTotal; ?>
 							</span>
 
 							<?php 
@@ -151,7 +151,7 @@ _gaq.push(['_trackPageview']);
 					 	if ($pg==$pagActual) {$current=array('<li class="current">','</li>');} else {$current=array('','');}
  						if ($pg>0 and $pg<=$pagTotal) {
  						?>
-						<li><?php echo $current[0]; ?><a href="videos_index.php?p=<?php echo $_GET['p']; ?>&amp;pag=<?php echo $pg; ?>"><?php echo $pg; ?></a><?php echo $current[1]; ?></li>
+						<li><?php echo @$current[0]; ?><a href="videos_index.php?p=<?php echo @$_GET['p']; ?>&amp;pag=<?php echo @$pg; ?>"><?php echo @$pg; ?></a><?php echo @$current[1]; ?></li>
 						<?php
   						$i++;
  						}
