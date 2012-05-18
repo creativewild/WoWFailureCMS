@@ -62,9 +62,17 @@ _gaq.push(['_trackPageview']);
 	<div class="content-header">
 				<h2 class="header ">Top 3vs3</h2>
 
-		<div class="desc">This page lists all available World of Failure Players inside the <?php 	require_once("configs.php");
-									echo $name_realm1['realm']; 
-									?> Realm as well as the stats of each. The Character can be listed as either Horde or Alliance. Let us apologize in advance if you find any player that is not listed, it takes 5 seconds to refresh the list.</div>
+		<div class="desc">This page lists all available World of Failure Players inside the <?php
+					$get_realms = mysql_query("SELECT * FROM $server_adb.realmlist ORDER BY `id` ASC");
+					while($realm = mysql_fetch_array($get_realms)){
+					
+					$host = $realm['address'];
+					$world_port = $realm['port']; 
+					$world = @fsockopen($host, $world_port, $err, $errstr, 2);
+					
+					echo $realm['name'];
+
+					}?> Realm as well as the stats of each. The Character can be listed as either Horde or Alliance. Let us apologize in advance if you find any player that is not listed, it takes 5 seconds to refresh the list.</div>
 <span class="clear"><!-- --></span>
 	</div>
 
