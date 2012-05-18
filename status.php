@@ -273,7 +273,7 @@ _gaq.push(['_trackPageview']);
 							</a>
 						</td>
 						
-						<td class="type" data-raw="'.$icon[$realm['icon']].'"><span class="'.$icon[$realm['icon']].'">('.$icon[$realm['icon']].')</span></td>
+						<td class="type" data-raw="'.@$icon[$realm['icon']].'"><span class="'.@$icon[$realm['icon']].'">('.@$icon[$realm['icon']].')</span></td>
 						<td class="population" data-raw="'.$population[$realm['population']].'"><span class="'.$population[$realm['population']].'">'.$population[$realm['population']].'</span></td>
 						<td class="locale">'.$timezone[$realm['timezone']].'</td>
 						<td class="queue" data-raw="false">';
