@@ -2,7 +2,7 @@
 if(!isset($_SESSION['username'])){
     ?>
     <div class="user-plate">
-        <a href="?login" onclick="return Login.open()" class="card-login" onclick="BnetAds.trackImpression('Battle.net Login', 'Character Card', 'New'); return Login.open('login.php');">
+        <a href="?login" onclick="return Login.open()" class="card-login">
         <? echo $uplate['login']?>
         </a>
         
@@ -56,11 +56,13 @@ if(!isset($_SESSION['username'])){
         $server_wdb = $realm_extra['world_db'];
         
         $query001 = mysql_query("SELECT * FROM $server_cdb.characters WHERE account = '".$account_information['id']."' AND guid = '".$account_extra['character']."'");
-        if($query001){
+        if(mysql_num_rows($query001) > 0){
             $actualchar = mysql_fetch_assoc($query001);
             $numchars++;
-        } else {
-            $delete_char = mysql_query("UPDATE users SET character = 0 WHERE id = '".$account_extra['id']."'");
+        }
+		else {
+            mysql_query("UPDATE $server_db.users SET `character` = 0 WHERE id = $account_extra[id]")
+				or die(mysql_error("Cannot remove character from web db"));
             header("Location : index.php");
         }
         
@@ -87,7 +89,6 @@ if(!isset($_SESSION['username'])){
                         @$set_character = mysql_query("UPDATE users SET `avatar` = '".$avatar."', `character` = '".$actualchar['id']."', `char_realm` = '".$realm_extra['id']."' WHERE id = '".$account_extra['id']."'");
                    }
                 }
-                
                 $numchars = $numchars + mysql_num_rows($check_chars); 
             }
         }
