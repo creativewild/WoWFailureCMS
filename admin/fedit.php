@@ -242,7 +242,7 @@ function changeVal(val){
                   $pathimagen=$path.$imagen;
                   $nombre = substr($imagen, 0,strlen($imagen)-4);
                   echo "<tr>"; // para empezar una nueva linea
-                  echo "<td><a href='javascript:;' name='pop' onclick=changeVal('".$nombre."');pop('close');>
+                  echo "<td><a name='pop' onclick=changeVal('".$nombre."');pop('close');>
                   <img src='$pathimagen' width='38px' border='0' ></a></td>";  //Clik on it and the name appear on the textbox
                   echo "</tr>";
                 }
