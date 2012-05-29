@@ -139,8 +139,8 @@ $('#checkall').toggleClass('clicked');
               </label>
             </div>
             <p class="edit"><a href="editnews.php?id='.$new['id'].'"><img src="images/editIco.png" alt="" /></a> <a href="deletenews.php?id='.$new['id'].'"><img src="images/deletIco.png" alt="" /></a></p>
-            <p class="title">'.$new['title'].'</p>
-            <p class="descrip">'.substr(strip_tags($new['content']),0,90).'</p>
+            <p class="title">'.substr(strip_tags($new['title']),0,16).' ...</p>
+            <p class="descrip">'.substr(strip_tags($new['content']),0,90).' ...</p>
             <p class="inc">'.$new['comments'].'</p>
             </li>';
             }?>
