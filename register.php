@@ -78,7 +78,7 @@ _gaq.push(['_trackPageLoadTime']);
 			
           function valid_email($email) {         //Small function to validate the email
                 $result = TRUE;
-                if(!eregi("^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$", $email)) {
+                if(preg_match("#[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$#", $email)) {
                               $result = FALSE;
                 }
                 return $result;
@@ -213,14 +213,14 @@ _gaq.push(['_trackPageLoadTime']);
 <select name="country" id="country" class="small border-5 glow-shadow-2 form-disabled" tabindex="1"  >
 <optgroup label="">
 <option value="CHL">Chile</option>
-<option value="ESP">España</option>
+<option value="ESP">Espaï¿½a</option>
 <option value="GBR" selected="selected">United Kingdom</option>
 <option value="FRA">France</option>
 <option value="DEU">Germany</option>
 <option value="RUS">Russian Federation</option>
 </optgroup>
 <option value="AFG">Afghanistan</option>
-<option value="ALA">Åland Islands</option>
+<option value="ALA">ï¿½land Islands</option>
 <option value="ALB">Albania</option>
 <option value="DZA">Algeria</option>
 <option value="ASM">American Samoa</option>
@@ -395,7 +395,7 @@ _gaq.push(['_trackPageLoadTime']);
 <option value="REU">Reunion</option>
 <option value="ROU">Romania</option>
 <option value="RWA">Rwanda</option>
-<option value="BLM">Saint Barthélemy</option>
+<option value="BLM">Saint Barthï¿½lemy</option>
 <option value="SHN">Saint Helena</option>
 <option value="KNA">Saint Kitts And Nevis</option>
 <option value="LCA">Saint Lucia</option>
@@ -771,11 +771,11 @@ passwordStrength3: 'Strong'
 --><span class="input-right">
 <span class="input-text input-text-small">
 <input type="text" name="firstName" value="" id="firstname" class="small border-5 glow-shadow-2" autocomplete="off" maxlength="32" tabindex="1" required="required" placeholder="<?php echo $re['re41']; ?>" />
-<span class="inline-message" id="firstname-message"> </span>
+<span class="inline-message" id="firstname-message">ï¿½</span>
 </span>
 <span class="input-text input-text-small">
 <input type="text" name="lastName" value="" id="lastname" class="small border-5 glow-shadow-2" autocomplete="off" maxlength="32" tabindex="1" required="required" placeholder="<?php echo $re['re42']; ?>" />
-<span class="inline-message" id="lastname-message"> </span>
+<span class="inline-message" id="lastname-message">ï¿½</span>
 </span>
 </span>
 </div>
@@ -792,11 +792,11 @@ passwordStrength3: 'Strong'
 --><span class="input-right">
 <span class="input-text input-text-small">
 <input type="text" name="accountEmail" value="" id="emailAddress" class="small border-5 glow-shadow-2" autocomplete="off" maxlength="32" tabindex="1" required="required" placeholder="<?php echo $re['re43']; ?>" />
-<span class="inline-message" id="emailAddress-message"> </span>
+<span class="inline-message" id="emailAddress-message">ï¿½</span>
 </span>
 <span class="input-text input-text-small">
 <input type="text" name="accountEmail2" value="" id="lastname" class="small border-5 glow-shadow-2" autocomplete="off" maxlength="32" tabindex="1" required="required" placeholder="<?php echo $re['re44']; ?>" />
-<span class="inline-message" id="emailAddressConfirmation-message"> </span>
+<span class="inline-message" id="emailAddressConfirmation-message">ï¿½</span>
 </span>
 </span>
 </div>
@@ -829,11 +829,11 @@ passwordStrength3: 'Strong'
 --><span class="input-right">
 <span class="input-text input-text-small">
 <input type="password" id="password" name="accountPass" value="" class="small border-5 glow-shadow-2" autocomplete="off" onpaste="return false;" maxlength="16" tabindex="1" required="required" placeholder="<?php echo $re['re46']; ?>" />
-<span class="inline-message" id="password-message"> </span>
+<span class="inline-message" id="password-message">ï¿½</span>
 </span>
 <span class="input-text input-text-small">
 <input type="password" id="rePassword" name="accountPassc" value="" class="small border-5 glow-shadow-2" autocomplete="off" onpaste="return false;" maxlength="16" tabindex="1" required="required" placeholder="<?php echo $re['re47']; ?>" />
-<span class="inline-message" id="rePassword-message"> </span>
+<span class="inline-message" id="rePassword-message">ï¿½</span>
 </span>
 </span>
 </div>
@@ -1075,10 +1075,10 @@ urlPrompt: 'URL Address:'
 },
 ui: {
 viewInGallery: 'View in gallery',
-loading: 'Loading…',
+loading: 'Loadingï¿½',
 unexpectedError: 'An error has occurred',
-fansiteFind: 'Find this on…',
-fansiteFindType: 'Find {0} on…',
+fansiteFind: 'Find this onï¿½',
+fansiteFindType: 'Find {0} onï¿½',
 fansiteNone: 'No fansites available.'
 },
 grammar: {
