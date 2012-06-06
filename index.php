@@ -2,7 +2,7 @@
 require_once("configs.php");
 $page_cat = "home";
 ?>
-
+<HTML>
 <head>
 	<title><?php echo $website['title']; ?></title>
 	<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
@@ -206,7 +206,8 @@ $page_cat = "home";
 						{
 							echo '<br><br>';
 							include("panel/vote.php");
-						}
+						}else
+						include("panel/vote_offline.php");
 						include("panel/server_information.php");
 						include("panel/services.php");
 						include("panel/popular_topics.php");
