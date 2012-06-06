@@ -16,6 +16,7 @@ $page_cat = "home";
 	<link rel="stylesheet" type="text/css" media="all" href="wow/static/css/wow.css?v4" />
 	<link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/cms/homepage.css?v15" />
 	<link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/cms/blog.css?v15" />
+	<link rel="stylesheet" type="text/css" media="all" href="wow/static/css/status.css?v1" />
 	<link rel="stylesheet" type="text/css" media="all" href="wow/static/local-common/css/cms/cms-common.css?v15" />
 	<link rel="stylesheet" type="text/css" media="all" href="wow/static/css/cms.css?v4" />
 	<!--[if IE 6]><link rel="stylesheet" type="text/css" media="all" href="wow/static/css/cms-ie6.css?v4" /><![endif]-->
