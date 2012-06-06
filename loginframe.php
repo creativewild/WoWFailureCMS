@@ -68,7 +68,8 @@ include("configs.php");
        }
       </style>
       <center>
-      <h3>Success</h3><br />
+      <p><h3>Success</h3></p>
+	  <h3>Loading&#8230;</h3><br />
       <div class="loader"></div>
       
       <?php
@@ -88,7 +89,7 @@ include("configs.php");
        }
       </style>
       <center>
-      <h3>Contrase&ntilde;a o Nombre de cuenta incorrectos.</h3><br />
+      <h3>Your Credentials are Incorrect.</h3><br />
       <div class="loader"></div>
       <meta http-equiv="refresh" content="2"/>
       </center>
