@@ -111,17 +111,17 @@ Services
 	</div>
 
 	<span class="clear"><!-- --></span>
-	<div class="under-name color-c<?php echo $character->getObjectInfo()->class; ?>">
-	<span class="level"><strong><?php echo $character->getObjectInfo()->level; ?></strong></span> <a href="#" class="race"><?php
-  echo $armory['race'.$raceNum];
+	<div class="under-name color-c<?php echo @$character->getObjectInfo()->class; ?>">
+	<span class="level"><strong><?php echo @$character->getObjectInfo()->level; ?></strong></span> <a href="#" class="race"><?php
+  echo @$armory['race'.$raceNum];
   ?></a> <a id="profile-info-spec" href="#" class="spec tip"><?php
-  $talentP = $character->getTalentInfo()->branchP;
-  $talentS = $character->getTalentInfo()->branchS;
+  @$talentP = $character->getTalentInfo()->branchP;
+  @$talentS = $character->getTalentInfo()->branchS;
   if ($talentP==""){$talentP='0';}
   if ($talentS==""){$talentS='0';}
-  ?><?php if ($talentP<>'0'){echo $armory['branch'.$talentP];} ?></a> <a href="#" class="class"><?php
-  $classNum=$character->getObjectInfo()->class;   //Show the name of the class and not de number
-  echo $armory['class'.$classNum];
+  ?><?php if ($talentP<>'0'){echo @$armory['branch'.$talentP];} ?></a> <a href="#" class="class"><?php
+  @$classNum=$character->getObjectInfo()->class;   //Show the name of the class and not de number
+  echo @$armory['class'.$classNum];
   ?></a><span class="comma">,</span>
 	<span class="realm tip" id="profile-info-realm" data-battlegroup="Raserei / Frenzy">
 	<?php echo $name_realm1['realm']; ?>
