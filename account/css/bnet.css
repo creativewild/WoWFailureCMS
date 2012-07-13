@@ -190,7 +190,7 @@ img { -moz-user-select: none; -webkit-user-select: none; user-select: none; }
 #header #logo a { width: 402px; height: 92px; display: block; border: none; text-indent: -9999px; background: url("../local-common/images/logos/bnet-default.png") no-repeat;  }
 #header #navigation { margin-top: 5px; padding: 15px 20px 0 0; height: 61px; -moz-user-select: none; -webkit-user-select: none; user-select: none; }
 #header #navigation h2 { margin-bottom: 10px; color: #89959a; font-weight: normal; }
-#header #navigation a { color: #00b6ff; }
+#header #navigation a { color: #8c1e18; }
 #header .ui-breadcrumb li { padding-right: 15px; background: url("../../wow/local-common/images/icons/arrows.gif") 105% -91px no-repeat; }
 #header .ui-breadcrumb li.last { background: none; }
 

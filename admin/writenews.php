@@ -178,7 +178,7 @@ function preview(img,event){
                   $nombre = substr($imagen,0,strlen($imagen)-11); //get the name for the db
                   echo "<tr>"; // para empezar una nueva linea
                   echo "<td><a href='javascript:;' name='pop' onclick=changeVal('".$nombre."');pop('close');>
-                  <img src='$pathimagen' width='160px' border=0 onmouseover=preview('".$pathimagen."','on'); onmouseout=preview('".$pathiamgen."','out');></a></td>";  //Clik on it and the name appear on the textbox
+                  <img src='$pathimagen' width='160px' border=0 onmouseover=preview('".$pathimagen."','on'); onmouseout=preview('".$pathimagen."','out');></a></td>";  //Clik on it and the name appear on the textbox
                   echo "</tr>";
                 }
                 ?>

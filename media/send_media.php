@@ -132,7 +132,7 @@ if (isset($_POST['send'])){
         $fileName = $_POST['type'].$part.$random.$ext; //An unique media name for file storage
         $url = $url.$fileName;  //The absolute route for links
         $id = $fileName;       //The filename for php refers, unlink(), etc.                                 
-                                                                    
+                                                                   
         if(move_uploaded_file($_FILES["file"]["tmp_name"],$path.$fileName)){
           $error = false;
         }
@@ -151,7 +151,7 @@ if (isset($_POST['send'])){
       $error = true;
     } 
   }
- if (!$error){
+ if (!isset($error)){
   mysql_select_db($server_adb);
   $check_query = mysql_query("SELECT account.id,gmlevel from account  inner join account_access on account.id = account_access.id where username = '".strtoupper($_SESSION['username'])."'");
   $login = mysql_fetch_assoc($check_query);

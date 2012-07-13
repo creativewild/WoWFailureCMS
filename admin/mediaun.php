@@ -10,21 +10,21 @@ include("../configs.php");
 		');
 	} 
     
-  if ($_GET['sort'] == 'type'){    //Order by...
+  if (isset($_GET['sort']) == 'type'){    //Order by...
     $order = ' type ASC, ';
   }
-  elseif($_GET['sort'] == 'title'){
+  elseif(isset($_GET['sort']) == 'title'){
     $order = ' title ASC, ';
   }
-  elseif($_GET['sort'] == 'author'){
+  elseif(isset($_GET['sort']) == 'author'){
     $order = ' author ASC, ';
   }
   else{
     $order = '';
   }
   //MEDIA TYPES VIEW **** Types: 0-video, 1-screen,2-wall,3-art,4-comic
-  if ($_GET['type']=='0' || $_GET['type']=='1' || $_GET['type']=='2' || $_GET['type']=='3' || $_GET['type']=='4'){
-    $type = " AND type = '".$_GET['type']."' ";
+  if (isset($_GET['type'])=='0' || isset($_GET['type'])=='1' || isset($_GET['type'])=='2' || isset($_GET['type'])=='3' || isset($_GET['type'])=='4'){
+    $type = " AND type = '".isset($_GET['type'])."' ";
   }else{
     $type = ''; //If not defined type or type all then show all media types
   }
@@ -168,7 +168,7 @@ $('#checkall').toggleClass('clicked');
         <tbody>
       <?php
       while ($row = mysql_fetch_assoc($sql_query)){
-      $author = mysql_fetch_assoc(mysql_query("SELECT username FROM auth.account WHERE id = '".$row['author']."'"));
+      $author = mysql_fetch_assoc(mysql_query("SELECT username FROM ".$server_adb.".account WHERE id = '".$row['author']."'"));
       echo'
         <tr>
           <td class="chk"><input type="checkbox" /></td>   

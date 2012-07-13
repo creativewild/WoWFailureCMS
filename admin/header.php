@@ -28,15 +28,15 @@
               <div class='left_scroll'><img src='images/leftArrow.png' alt="" /></div>
               <div class='carousel_inner'>
               <ul class='carousel_ul'>
-                <li><span rel="tooltip" title="<strong style='color:#00B6FF'>Write News</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico1" href='writenews.php'></a></span></li>
-				        <li><span rel="tooltip" title="<strong style='color:#00B6FF'>View/Edit News</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico3" href='viewnews.php'></a></span></li>
-			         	<li><span rel="tooltip" title="<strong style='color:#00B6FF'>Manage Media</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico10" href='mediaall.php'></a></span></li>
-				        <li><span rel="tooltip" title="<strong style='color:#00B6FF'>Unapproved Media</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="icom2" href='mediaun.php'></a></span></li>
-				        <li><span rel="tooltip" title="<strong style='color:#00B6FF'>Forums</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="icof" href='fcategory.php'></a></span></li>                   
+                <li><span rel="tooltip" title="<strong style='color:#8c1e18'>Write News</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico1" href='writenews.php'></a></span></li>
+				        <li><span rel="tooltip" title="<strong style='color:#8c1e18'>View/Edit News</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico3" href='viewnews.php'></a></span></li>
+			         	<li><span rel="tooltip" title="<strong style='color:#8c1e18'>Manage Media</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico10" href='mediaall.php'></a></span></li>
+				        <li><span rel="tooltip" title="<strong style='color:#8c1e18'>Unapproved Media</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="icom2" href='mediaun.php'></a></span></li>
+				        <li><span rel="tooltip" title="<strong style='color:#8c1e18'>Forums</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="icof" href='fcategory.php'></a></span></li>                   
 						    
-                <li><span rel="tooltip" title="<strong style='color:#00B6FF'>View the Website</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico4" href='viewwebsite.php'></a></span></li>
-						    <li><span rel="tooltip" title="<strong style='color:#00B6FF'>Connectivity</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico2" href='#'></a></span></li>
-                <li><span rel="tooltip" title="<strong style='color:#00B6FF'>Information</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico9" href='info.php'></a></span></li>
+                <li><span rel="tooltip" title="<strong style='color:#8c1e18'>View the Website</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico4" href='viewwebsite.php'></a></span></li>
+						    <li><span rel="tooltip" title="<strong style='color:#8c1e18'>Connectivity</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico2" href='#'></a></span></li>
+                <li><span rel="tooltip" title="<strong style='color:#8c1e18'>Information</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico9" href='info.php'></a></span></li>
               </ul>
               </div>
               <div class='right_scroll'><img src='images/rightArrow.png' alt="" /></div>
@@ -48,11 +48,11 @@
               <div class='carousel_inner'>
                 <ul class='carousel_ul2'>
                   <!-- To do It'll be visible just to superadmins-->
-                  <li><span rel="tooltip" title="<strong style='color:#00B6FF'>Users Panel</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico5" href='users.php'></a></span></li>
-						      <li><span rel="tooltip" title="<strong style='color:#00B6FF'>Notes and Dates</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico6" href='calendarandnotes.php'></a></span></li>
-						      <li><span rel="tooltip" title="<strong style='color:#00B6FF'>Edit the DB</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico7" href='editdb.php'></a></span></li>
-						      <li><span rel="tooltip" title="<strong style='color:#00B6FF'>Delete your DB</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico8" href='deletedb.php'></a></span></li>
-                  <li><span rel="tooltip" title="<strong style='color:#00B6FF'>Information</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico9" href='info.php'></a></span></li>
+                  <li><span rel="tooltip" title="<strong style='color:#8c1e18'>Users Panel</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico5" href='users.php'></a></span></li>
+						      <li><span rel="tooltip" title="<strong style='color:#8c1e18'>Notes and Dates</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico6" href='calendarandnotes.php'></a></span></li>
+						      <li><span rel="tooltip" title="<strong style='color:#8c1e18'>Edit the DB</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico7" href='editdb.php'></a></span></li>
+						      <li><span rel="tooltip" title="<strong style='color:#8c1e18'>Delete your DB</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico8" href='deletedb.php'></a></span></li>
+                  <li><span rel="tooltip" title="<strong style='color:#8c1e18'>Information</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico9" href='info.php'></a></span></li>
                 </ul>
               </div>
               <div class='right_scroll'><img src='images/rightArrow.png' alt="" /></div>
@@ -63,7 +63,7 @@
               <div class='left_scroll'><img src='images/leftArrow.png' alt="" /></div>
               <div class='carousel_inner'>
                 <ul class='carousel_ul3'>
-                  <li><span rel="tooltip" title="<strong style='color:#00B6FF'>Account Information</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico9" href='info.php'></a></span></li>
+                  <li><span rel="tooltip" title="<strong style='color:#8c1e18'>Account Information</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico9" href='info.php'></a></span></li>
                   <li><span rel="tooltip" title="<strong style='color:red'>Log Out</strong>" style="color:#ff9200;font-weight:bold;font-size:14px;"><a class="ico5" href='logout.php'></a></span></li>
                   </ul>
               </div>

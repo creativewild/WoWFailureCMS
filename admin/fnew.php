@@ -186,10 +186,10 @@ function validateF(){
         </div>
         <h3>Forum Information: 
         <?php 
-          if($forum['locked'] == '1'){
-            echo '<font color="red">'.$forum['name'].'</font>';
+          if(isset($forum['locked']) == '1'){
+            echo '<font color="red">'.isset($forum['name']).'</font>';
           }else{
-            echo '<font color="green">'.$forum['name'].'</font>';
+            echo '<font color="green">'.isset($forum['name']).'</font>';
           }
         ?></h3>
         <form method="post" action="" class="styleForm" id="newF" onsubmit="return validateF();">
@@ -223,7 +223,7 @@ function validateF(){
           <tr><td>
           <div class="folder">
           <p><strong>Image: </strong><a href="javascript:;" onclick="pop('open');">
-          <img id="imgLoad" src="../images/forum/forumicons/blizzard.gif" alt="<?php echo $forum['image']; ?>" style="vertical-align:middle;"/></a>
+          <img id="imgLoad" src="../images/forum/forumicons/blizzard.gif" alt="<?php echo isset($forum['image']); ?>" style="vertical-align:middle;"/></a>
           <input type="hidden" name="f_image" id="image" value="blizzard">  
             <div  class="pop-image" id="pop" name="pop" onblur="pop('blur');" tabindex="1" style="width:80px;height:300px;left:80px;">
               <div class="note">
